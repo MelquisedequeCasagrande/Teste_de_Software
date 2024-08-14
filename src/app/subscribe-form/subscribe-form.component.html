@@ -1,0 +1,40 @@
+<div class="subscribe-wrapper">
+    <div class="subscribe-content">
+      <div class="subscribe-text">
+        <h1>Inscreva-se agora!</h1>
+        <p>Preencha o formulário abaixo para se inscrever e comece a receber nossas atualizações diretamente em sua caixa de entrada.</p>
+        
+        <ul>
+          <li>
+            <img src="assets/icones/icone.svg" position="center" alt="Check" class="check-icon">
+            <p><strong>Guias e Tutoriais:</strong> Aprenda como implementar e otimizar soluções de IoT para sua empresa.</p>
+          </li>
+          <li>
+            <img src="assets/icones/icone.svg" alt="Check" class="check-icon">
+            <p><strong>Notícias e Tendências:</strong> Fique por dentro das últimas novidades e avanços no mundo do IoT.</p>
+          </li>
+          <li>
+            <img src="assets/icones/icone.svg" alt="Check" class="check-icon">
+            <p><strong>Ofertas e Promoções:</strong> Receba ofertas especiais e promoções exclusivas para assinantes da nossa newsletter.</p>
+          </li>
+        </ul>
+        
+        <form (ngSubmit)="onSubmit()">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="email@email.com" required>
+          <div *ngIf="errorMessage" class="error-message">
+            <p>{{ errorMessage }}</p>
+          </div>
+          <button type="submit">Inscrever-se</button>
+        </form>
+      </div>
+      
+      <div class="subscribe-image">
+        <img src="assets/image/imagem.png" alt="IoT Illustration" class="main-image">
+        <div class="logo">
+          <img src="assets/icones/logo-mindtech.svg" alt="Mindtech Logo">
+        </div>
+      </div>
+    </div>
+  </div>
+  
