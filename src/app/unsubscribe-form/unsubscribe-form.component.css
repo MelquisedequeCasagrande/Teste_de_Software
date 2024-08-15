@@ -1,4 +1,4 @@
-.subscribe-wrapper {
+.unsubscribe-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
   
-.subscribe-content {
+.unsubscribe-content {
     display: flex;
     max-width: 960px;
     background: radial-gradient(#092456 10%, #000000, #000000);
@@ -21,38 +21,23 @@
     margin-right: 5px;
 }
 
-.subscribe-text {
+.unsubscribe-text {
     width: 480px;
     padding: 50px;
     color: #ffffff;
     box-sizing: border-box;
 }
   
-.subscribe-text h1 {
+.unsubscribe-text h1 {
+    align-items: center;
     margin-top: 70px;
     font-family: "Inter", sans-serif;
     font-size: 2rem;
 }
   
-.subscribe-text p {
+.unsubscribe-text p {
     font-family: "Inter", sans-serif;
     font-size: 1rem;
-}
-  
-.subscribe-text ul {
-    padding-left: 0;
-    margin-left: 0;
-    list-style: none;
-}
-  
-.subscribe-text ul li {
-    display: flex;
-    align-items: center;
-    text-align: left;
-}
-
-.subscribe-text ul li strong {
-    font-weight: bold;
 }
   
 form {
@@ -74,7 +59,6 @@ form input {
 }
   
 form button {
-    margin-top: 2px;
     margin-bottom: 50px;
     padding: 10px;
     font-size: 1rem;
@@ -86,42 +70,21 @@ form button {
     transition: background-color 0.3s ease;
 }
   
-form button:hover {
-    background-color: #2e63b8;
-}
-  
-
-.subscribe-image {
-    position: relative;
-    background: radial-gradient(at 0% 50%, #092456 10%, #000000, #000000)   ;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 480px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-right: 30px;
-}
-  
-.subscribe-image img {
-    display: relative;
-    max-width: 90%;
-    height: 90%;
-}
-    
-.subscribe-image .logo {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: auto;
-}
 
 .error-message {
-    color: #ff0000;
-    margin-top: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    color: #ff0000; /* Cor vermelha para a mensagem de erro */
+    margin-top: 10px; /* Espaçamento acima da mensagem */
+    font-weight: bold; /* Deixar o texto em negrito */
+  }
+
+button {
+    margin-bottom: 50px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #165CDE;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }

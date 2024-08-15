@@ -19,13 +19,19 @@
           </li>
         </ul>
         
-        <form (ngSubmit)="onSubmit()">
+
+
+        <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()">
           <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="email@email.com" required>
-          <div *ngIf="errorMessage" class="error-message">
-            <p>{{ errorMessage }}</p>
+          <input type="email" id="email" formControlName="email" required>
+          
+          <div *ngIf="email?.touched || email?.dirty">
+            <div *ngIf="subscribeForm.get('email')?.errors?.['email']" class="error-message"></div>
+            <div *ngIf="subscribeForm.get('email')?.errors?.['email'].required" class="error-message">E-mail é obrigatório.</div>
+            <div *ngIf="subscribeForm.get('email')?.errors?.['email']" class="error-message">Formato de e-mail inválido.</div>
           </div>
-          <button type="submit">Inscrever-se</button>
+          <button type="submit" [disabled]="subscribeForm.invalid">Inscrever-se</button>
+          <p>Quer se descadastrar? <a routerLink="/unsubscribe">Clique aqui</a></p>
         </form>
       </div>
       

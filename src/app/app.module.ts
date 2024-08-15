@@ -6,17 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubscribeFormComponent } from './subscribe-form/subscribe-form.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { UnsubscribeFormComponent } from './unsubscribe-form/unsubscribe-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubscribeFormComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    UnsubscribeFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

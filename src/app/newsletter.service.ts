@@ -14,4 +14,8 @@ export class NewsletterService {
   subscribe(email: string): Observable<any> {
     return this.http.post(`${this.baseUrl}/subscribe`, { email });
   }
+
+  unsubscribe(email: string): Observable<any> {
+    return this.http.post(`${this.baseUrl}/unsubscribe`, { email });
+  }
 }

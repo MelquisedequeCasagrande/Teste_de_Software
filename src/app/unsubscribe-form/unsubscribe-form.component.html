@@ -1,0 +1,40 @@
+<div>  
+  </div>
+  <div class="unsubscribe-wrapper">
+    <div class="unsubscribe-content">
+      <div class="unsubscribe-text">
+        <h1>Descadastramento</h1>
+      <!--   <form (ngSubmit)="onUnsubscribe()">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" required>
+            <button type="submit">Cancelar inscrição</button>
+        </form> -->
+        
+        <form [formGroup]="unSubscribeForm" (ngSubmit)="onUnsubscribe()">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" formControlName="email" required>
+            <div *ngIf="unSubscribeForm.get('email')?.errors?.['email']" class="error-message">
+            <div *ngIf="unSubscribeForm.get('email')?.errors?.['email'].required">E-mail é obrigatório.</div>
+            <div *ngIf="unSubscribeForm.get('email')?.errors?.['email']">Formato de e-mail inválido.</div>
+            </div>
+            <button type="submit" [disabled]="unSubscribeForm.invalid">Inscrever-se</button>
+          </form>
+
+        <div *ngIf="isUnsubscribed" class="message">
+            <h2>Você foi descadastrado</h2>
+            <p>
+              Sentimos muito em perder você, mas entendemos totalmente.
+              <br>
+              Você se descadastrou por engano? Não se preocupe! Você pode se inscrever novamente instantaneamente clicando no botão abaixo:
+            </p>
+            <button (click)="onButtonClick()" class="button">Clique Aqui</button>
+          </div>
+        
+          <div *ngIf="!isUnsubscribed && message" class="error-message">
+            {{ message }}
+          </div>
+        
+      </div>
+    </div>
+  </div>
+  
